@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng kí học viên</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <form id="form_dk_hv">
+            <p>ĐĂNG KÍ HỌC VIÊN</p>
+            <div>
+                <label for="name">Họ và tên</label>
+                <input type="text" id="yourname" name="ho_va_ten">
+            </div>
+            <br>
+            <div>
+                <label for="brithday">Ngày sinh</label>
+                <input type="date" id="brithday">
+            </div>
+            <br>
+            <div>
+                <label for="render">Giới tính:</label>
+                <input type="radio" name="render" value="Nam" checked >Nam
+                <input type="radio" name="render" value="Nữ" checked > Nữ<br>
+            </div>
+            <br>
+            <div>
+                <label for="address">Địa chỉ</label>
+                <textarea name="address" id="address" cols="40" rows="5"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="class">Lớp</label>
+                <select name="class1">
+                    <option value="lopa">Lớp A</option>
+                    <option value="lopb">Lớp B</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone">
+            </div> 
+            <br>
+            <div>
+                <input type="submit" id="submit1" name="submit-form" value="Đăng ký">
+                <input type="submit" id="submit2" name="resett-form" value="Nhập lại">
+            </div> 
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>

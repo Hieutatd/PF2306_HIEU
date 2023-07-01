@@ -1,3 +1,9 @@
+form {
+    width: 30%;
+    margin:1%;
+    border-color:black;
+    border-style: solid;
+}
 p {
     background-color: orange;
     color: white;
