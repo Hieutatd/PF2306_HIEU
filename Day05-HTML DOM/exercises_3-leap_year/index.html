@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check leap year</title>
+</head>
+<body>
+    <div>
+        <p>Enter number year</p>
+        <input type="number" onchange="getNumberYear(this)">
+        <br>    
+        <button id="checkBnt">Kiểm tra</button>
+     </div>
+   <script>
+    let year;
+    let checkBnt = document.getElementById("checkBnt");
+    function getNumberYear(obj){
+       let numberYear = obj.value;
+        if(numberYear < 0){
+            alert("Please enter a positive year number");
+        }else{
+            year = parseInt(numberYear);
+        }
+    }
+        
+    checkBnt.addEventListener("click", function(){
+            if(isLeapYear(year)) {
+                console.log(year +" is a leap year");
+            }else{
+                console.log(year +" is not a leap year");
+            }
+        })
+            
+        function isLeapYear(year) { 
+                if (year % 4 == 0) {
+                    if (year % 100 == 0) {
+                        if (year % 400 == 0) {
+                        return  true;
+                        } else {
+                        return false;
+                        }
+                    } else {
+                        return true;
+                    }
+                } else {
+                    return false;
+                }
+            }
+    
+   </script>
+</body>
+</html>

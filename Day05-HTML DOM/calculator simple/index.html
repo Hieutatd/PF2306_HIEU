@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator simple</title>
+</head>
+<body>
+    <p>
+        Please enter first number:<input type="number" id="getFirstNumber"> 
+        <br>
+        <br>
+        Please enter second number:<input type="number" id="getSecondNumber"> 
+    </p>
+    <div>
+        <button id="add" onclick="btnAdd()">Addition(+)</button>
+        <button id="sub" onclick="btnSub()">Subtraction(-)</button>
+        <button id="mul" onclick="btnMul()">Multipication(*)</button>
+        <button id="div" onclick="btnDiv()">Division(/)</button>
+    </div>
+    <p id="result"></p>
+    
+    <script>
+        let firstNumber = document.getElementById("getFirstNumber");
+        let secondNumber = document.getElementById("getSecondNumber");
+        let result = document.getElementById("result");
+        function btnAdd() {
+            let first = Number(firstNumber.value);
+            let second = Number(secondNumber.value);
+            result.innerText ="Addition result:" + (first + second);
+        }
+        function btnSub() {
+            let first = Number(firstNumber.value);
+            let second = Number(secondNumber.value);
+            result.innerText ="Subtraction result:" + (first - second);
+        }
+        function btnMul() {
+                let first = Number(firstNumber.value);
+                let second = Number(secondNumber.value);
+                result.innerText ="Multipication result:" + (first * second);
+        }
+        function btnDiv() {
+                let first = Number(firstNumber.value);
+                let second = Number(secondNumber.value);
+                result.innerText ="Division result:" + (first / second);
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even number_Odd number</title>
+</head>
+<body>   
+    <div>
+        <p>Nhập số vào ô</p>
+        <p><input id="result" type="number"></p>      
+        <button id="clicker" onclick="bntclick()">Kiểm tra</button>
+    </div>
+    <script>
+        let inputT = document.getElementById("result");
+        let clicker = document.getElementById("clicker");
+        
+        function bntclick () {
+            let number =parseInt(inputT.value);
+            if ( number % 2 == 0 ){ 
+            document.write("Đây là số chẵn");
+        }else{
+             document.write("Đây là số lẻ");}
+            }
+    </script>
+</body>
+</html>
