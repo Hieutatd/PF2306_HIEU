@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Currency</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <th><input type="number" onchange="getAmount(this)"></th>
+            <th>
+                <select name="fromCurrency" id="fromCurrency" onchange="getFromCurrency(this)">
+                    <option value="Please">Please Enter Currency</option>
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                   
+                </select>
+            </th>
+            <th>
+                <select name="toCurrency=" id="toCurrency" onchange="getToCurrency(this)">
+                    <option value="Please">Please Enter Currency</option>
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                </select>
+            </th>
+            <th>
+                <button onclick="checkBtn()">Convert</button>
+            </th>
+        </tr>
+    </table>
+    <p id="result"></p>
+    <script>
+        let result = document.getElementById("result");
+        let amount, fromCurrency, toCurrency;
+        let currency1, currency2;
+        function getAmount(obj) {
+            amount = obj.value;
+            console.log(amount);
+        }
+
+        function getFromCurrency(obj) {
+            fromCurrency = obj.value;
+            switch (fromCurrency) {
+                case "vnd": currency1 = 24000; break;
+                case "usd": currency1 = 1; break;
+                default: break;
+            }
+            console.log(currency1);
+        }
+
+        function getToCurrency(obj) {
+            let toCurrency = obj.value;
+            switch (toCurrency) {
+                case "vnd": currency2 = 1 / 24000; break;
+                case "usd": currency2 = 1; break;
+                default: break;
+            }
+            console.log(currency2);
+        }
+        
+        function checkBtn() {
+            result.innerText ="Result :" + amount * currency1 * currency2;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉ số BMI</title>
+</head>
+
+<body>
+    <script>
+
+        let yourWeight = parseInt(prompt("Pleae entered your weight"));
+        let yourHeight = parseInt(prompt("Pleae entered your height"));
+        let bmi = yourWeight / (yourHeight * yourHeight);
+        if (bmi < 16) {
+            alert("You are underweight III");
+        } else if (bmi >= 16 && bmi < 17) {
+            alert("You are underweight II");
+        } else if (bmi >= 17 && bmi < 18.5) {
+            alert("You are underweight I");
+        } else if (bmi >= 18.5 && bmi < 25) {
+            alert("You are healthy");
+        } else if (bmi >= 25 && bmi < 30) {
+            alert("You are overweight")
+        } else if (bmi >= 30 && bmi < 35) {
+            alert("You are Fat I")
+        } else if (bmi >= 35 && bmi < 40) {
+            alert("You are Fat II")
+        } else {
+            alert("You are Fat III")
+        }
+    </script>
+</body>
+
+</html>

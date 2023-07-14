@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate day for month</title>
+</head>
+
+<body>
+    <br><br>
+    <input type="number" onchange="getMonth(this)">
+    <button onclick="calculateDate()">Tính số ngày</button>
+    <p id="result"></p>
+</body>
+    <script>
+        let month, dayOfMonth;
+        let result = document.getElementById("result");
+        
+        function getMonth(obj){
+            month = Number(obj.value);
+        }
+        function calculateDate(){
+            switch(month){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12: dayOfMonth = 31; break;
+                case 4:
+                case 6:
+                case 9:
+                case 11: dayOfMonth = 30; break;
+                default : dayOfMonth = "28 hoặc 29"; break;
+            }
+            
+                result.innerText = `Tháng ${month} có ${dayOfMonth} ngày `
+        }
+    </script>
+</html>

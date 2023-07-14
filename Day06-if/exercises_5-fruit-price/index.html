@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Giá Hoa Quả</p> <b></b>
+    <select name="listfruit" id="listfruit" onchange="getFruit(this)">    
+        <option value="Oi">Ổi</option>
+        <option value="DuaHau">Dưa Hấu</option>
+        <option value="Tao">Táo</option>
+        <option value="Xoai">Xoài</option>
+        <option value="Cam">Cam</option>
+        <option value="ChomChom">Chôm Chôm</option>
+        <option value="MangCut">Măng Cụt</option>
+    </select>
+    <button onclick="checkPrice()">Check</button>
+    <p id="result"></p>
+    <script>
+        let fruit;
+        let result = document.getElementById("result");
+
+        function getFruit(obj) {
+            fruit = obj.value;
+        }
+        function checkPrice() {
+            switch (fruit) {
+                case "Oi": price = "20000" ; break ;
+                case "DuaHau": price = "20000" ; break ;
+                case "Tao": price = "30000" ; break ;
+                case "Xoai": price = "30000" ; break ;
+                case "Cam": price = "40000" ; break ;
+                case "ChomChom": price = "40000" ; break ;
+                case "MangCut": price = "50000" ; break ;
+                default: price = "50000" ; break ;
+            }
+            result.innerText = price + "VND/kg";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="number" id="numberDigits" onchange="getNumber(this)"> Enter the first 9 digits of an ISBN
+    <script>
+        let a, b, d, e, f, g, h, i, j, k, num;
+        function getNumber(obj) {
+            num = parseInt(obj.value);
+            console.log(num);
+            a = Math.floor(num/(Math.pow(10,8)));
+            b = Math.floor(num/(Math.pow(10,7)));
+            c = Math.floor(num/(Math.pow(10,6)));
+            d = Math.floor(num/(Math.pow(10,5)));
+            e = Math.floor(num/(Math.pow(10,4)));
+            f = Math.floor(num/(Math.pow(10,3)));
+            g = Math.floor(num/(Math.pow(10,2)));
+            h = Math.floor(num/(Math.pow(10,1)))-Math.pow(10,8);
+            i = Math.floor(num/(Math.pow(10,0 )));
+            
+        console.log(h);
+        }
+        
+    </script>
+</body>
+</html>

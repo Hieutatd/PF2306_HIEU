@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_if-else-if</title>
+</head>
+<body>
+    <script>
+        let username = prompt("Please enter username: ");
+        if (username == "Admin") {
+            let password = prompt("Please enter your password: ");
+            if (password == "TheMaster") {
+                alert("Welcome ")
+            } else if (password == "" || password == null || password == undefined) {
+                alert("Cancelled");       
+            } else {
+            alert("I don't know you");
+            }
+        } else if (username == null || username == "") {
+            alert("Cancelled");
+        } else {
+            alert("I don't know you");
+        }
+    </script>
+</body>
+</html>

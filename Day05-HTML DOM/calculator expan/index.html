@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator expan</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">         
+            <input type="text" placeholder="0" id="outputScreen" disabled size = "20"><br><br>
+            <button onclick="clearDisplay()">Cl</button>         
+            <button onclick="addOpperator('+')">+</button>
+            <button onclick="addOpperator('-')">-</button>
+            <button onclick="addOpperator('*')">*</button>
+            <button onclick="addOpperator('/')">/</button>
+            <button onclick="equal()">=</button><br><br>
+            
+            <button onclick="addNumber(this)" value="1">1</button>
+            <button onclick="addNumber(this)" value="2">2</button>
+            <button onclick="addNumber(this)" value="3">3</button>
+            <button onclick="addNumber(this)" value="4">4</button>
+            <button onclick="addNumber(this)" value="5">5</button>
+            <button onclick="addNumber(this)" value="6">6</button><br><br>
+            <button onclick="addNumber(this)" value="7">7</button>
+            <button onclick="addNumber(this)" value="8">8</button>
+            <button onclick="addNumber(this)" value="9">9</button>
+            <button onclick="addNumber(this)" value="0">0</button>
+            
+        </div>
+    </div>
+    <script>
+        let firstNumber, secondNumber, result, displayText, temp = "", operator;
+        let outputScreen = document.getElementById("outputScreen");
+        function clearDisplay() {
+            outputScreen.value = "";
+            temp = "";
+        }
+        function addNumber(obj) {
+                    let num = obj.value;
+                    temp += num;
+                    outputScreen.value = temp;
+        }
+        function addOpperator(op) {
+           if (temp.length > 0) {
+            firstNumber = Number(temp);
+            temp = "";
+           }
+           operator = op;
+        }
+        function equal() {
+            if (temp.length == 0) {
+                outputScreen.value = firstNumber;
+            } else {
+                secondNumber = Number(temp);
+                switch (operator) {
+                     case "+": outputScreen.value = firstNumber + secondNumber; break;
+                     case "-": outputScreen.value = firstNumber - secondNumber; break;
+                     case "*": outputScreen.value = firstNumber * secondNumber; break;
+                     case "/": outputScreen.value = firstNumber / secondNumber; break;
+                     default: break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

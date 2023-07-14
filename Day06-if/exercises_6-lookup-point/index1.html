@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Môn Toán <input type="number" onchange="getPointMath(this)"><br><br>
+    Môn Văn <input type="number" onchange="getPointLit(this)"><br><br>
+    Môn Anh <input type="number" onchange="getPointEng(this)"><br><br>
+
+    Khu vực
+    <select name="area" id="area" onchange="getArea(this)">
+        <option value="KV1">KV1</option>
+        <option value="KV2">KV2</option>
+        <option value="KV2-NT">KV2-NT</option>
+        <option value="KV3">KV3</option>
+    </select>
+    <br><br>
+    <p id="result">Result</p>
+    <button onclick="checkBtn()">Tính</button>
+
+    <script>
+        let math, literature, english, bonus, total;
+        let result = document.getElementById("result");
+        
+        function getPointMath(obj) {
+            math = parseFloat(obj.value);
+            console.log(math)
+        }
+        function getPointLit(obj) {
+            literature = parseFloat(obj.value);
+            console.log(literature)
+        }
+        function getPointEng(obj) {
+            english = parseFloat(obj.value);
+            console.log(english)
+        }
+        ////////
+        function getArea(obj) {
+             let area = obj.value
+            switch (area) {
+                case 'KV1': bonus = 0.75; break;
+                case 'KV2': bonus = 0.5; break;
+                case 'KV2-NT': bonus = 0.25; break;
+                default: bonus= 0; break;
+            }
+        }
+        function checkBtn() {
+            total = math + literature + english + bonus;
+            console.log(total);
+            result.innerText = "Tổng điểm "+  total;
+        }
+    </script>
+</body>
+
+</html>
