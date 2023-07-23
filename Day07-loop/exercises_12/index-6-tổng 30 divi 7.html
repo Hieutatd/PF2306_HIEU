@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let totalNumber= parseInt(prompt("Please enter the total numberof natural numbers divisible by 7"));
+        let number = 7, sum = 0, result = true;
+        let cnt =0;
+
+            while (cnt < totalNumber) {
+                for (let i = 7; i <= number; i++) {
+                    if (number % 7 == 0) {
+                        result = true;
+                        break;
+                    } else {
+                        result = false;
+                    }
+                }
+                if (result) {
+                    sum += number;
+                    cnt++;
+                }
+                number++;
+            }
+            console.log(`tổng của ${totalNumber} số đầu tiên chia hết cho 7: ${sum}`);
+          
+    </script>
+</body>
+</html>

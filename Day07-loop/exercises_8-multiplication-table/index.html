@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+</head>
+<body>
+    <table  id="mul-table" border ="1" width="30%"></table>
+   <script>
+     let table = "";
+    let mulTable = document.getElementById("mul-table");
+   
+    for (let i = 1; i <10; i++) {  
+        table += "<tr>";
+
+        for (let j = 2; j <10; j++) { 
+            table += "<td>" +j + "x" + i + "=" + (i*j) + "</td>";
+            document.write("<br/>")
+        }
+        table +="<tr>";
+
+    }
+    mulTable.innerHTML = table;
+   </script> 
+</body>
+</html>

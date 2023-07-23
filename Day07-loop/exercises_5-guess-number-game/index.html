@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess number game</title>
+</head>
+
+<body>
+    <div class="container">
+        <input id="getNumber" type="number"> Please enter maximum number
+        <br><br>
+        <button onclick="play()">Play</button>
+    </div>
+    <script>
+        let number = document.getElementById("getNumber");
+        let num;
+
+        getNumber.addEventListener("change", function () {
+            num = number.value;
+            console.log(num);
+        })
+
+        function play() {
+            let randomNumber = Math.floor(Math.random() * num);
+            console.log(`Random Number: ${randomNumber}`);
+            let guessNumber = -1;
+            let count = 0;
+            do {
+                guessNumber = parseInt(prompt(`Enter a number between 0 and ${num}`))
+                if (guessNumber == randomNumber) {
+                    alert(`${guessNumber} You guessed it right!`);
+                    break;
+                } else {
+                    count++;
+                }
+                if (count >= 3) {
+                    break;
+                }
+            } while (guessNumber != randomNumber)
+            console.log("End!");
+        }
+    </script>
+</body>
+
+</html>

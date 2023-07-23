@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id ="firstNumber" > Please enter a first number
+    <br><br>
+    <input type="number" id ="secondNumber" > Please enter a second number
+    <br><br>
+    <button type="number" onclick="checkBtn()">Enter</button>
+    <br><br>
+    <p id="result"></p>
+    <script>
+        let firstNumber = document.getElementById("firstNumber");
+        let secondNumber = document.getElementById("secondNumber");
+        let result = document.getElementById("result");
+        firstNumber.addEventListener("change", function (){
+            firstNumber = parseInt(firstNumber.value);
+            console.log(firstNumber);
+        })
+        secondNumber.addEventListener("change", function (){
+            secondNumber =parseInt(secondNumber.value);
+            console.log(secondNumber);
+        })
+        function checkBtn() {
+            if (firstNumber <= secondNumber) {
+            let sum = 0;
+            let i = firstNumber;
+            for (i ; i <= secondNumber; i++) {
+                sum += i;
+            }
+            console.log(sum);
+            result.innerText = ` Tổng các số từ ${firstNumber} đến ${secondNumber} : ${sum}`
+        }else{
+            let sum = 0;
+            let i = secondNumber;
+            for (i ; i <= firstNumber; i++) {
+                sum += i;
+            }
+            console.log(sum);
+            result.innerText = ` Tổng các số từ ${secondNumber} đến ${firstNumber} : ${sum}` 
+        }
+        }
+
+    </script>
+</body>
+</html>

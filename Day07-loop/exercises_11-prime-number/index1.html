@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="getTotalNumber" onchange="getTotalNumber(this)" type="number"> Please enter number of primes in the
+    sequence
+    <br><br>
+    <button onclick="printPrimes()">Enter</button>
+    <script>
+        let totalNumber;
+        let isPrimes = true;
+        let cnt = 0;
+        let firstPrimeNumber = 2;
+        let primes = " ";
+        function getTotalNumber(obj) {
+            totalNumber = obj.value;
+            console.log(totalNumber);
+        }
+        function printPrimes() {
+
+            while (cnt < totalNumber) {
+                for (let i = 2; i <= Math.sqrt(firstPrimeNumber); i++) {
+                    if (firstPrimeNumber % i == 0) {
+                        isPrimes = false;
+                        break;
+                    } else {
+                        isPrimes = true;
+                    }
+                }
+                if (isPrimes) {
+                    primes += " " + firstPrimeNumber;
+                    cnt++;
+                }
+                firstPrimeNumber++;
+            }
+            console.log(primes)
+        }
+    </script>
+</body>
+
+</html>
