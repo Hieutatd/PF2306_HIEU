@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number = prompt("Please enter a  Number series");
+        // console.log(number);
+        let result = [];
+        let numbersArr = number.split('');
+        // console.log(numbersArr);
+        for (let i = 0; i <= numbersArr.length; i++) {
+            if (numbersArr[i] % 2 == 0 && numbersArr[i + 1] % 2 == 0) {
+                result.push(numbersArr[i] + "-")
+            } else {
+                result.push(numbersArr[i])
+            }
+        }
+        // console.log("".concat(...ex2Result));
+        console.log(result.join(''));
+
+    </script>
+</body>
+
+</html>

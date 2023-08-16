@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" onchange="getValue(this)">
+    <button onclick="addValue()">Add</button>
+    <button onclick="showValue()">Display</button>
+    <p id="result">Result</p>
+    <script>
+        let result = document.getElementById("result");
+        let arrValue = [];
+        let inputValue;
+        function getValue(obj) {
+            inputValue = Number(obj.value);
+        }
+        function addValue() {
+            arrValue.push(inputValue);
+        }
+        function showValue() {
+            let text = "";
+            for (let i = 0; i < arrValue.length; i++) {
+                text += "Element " + i + " = " + arrValue[i] + "<br>"
+            }
+            result.innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>

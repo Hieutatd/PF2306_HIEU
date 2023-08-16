@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = prompt('Please enter something');
+        let newArr = [...arr];
+        console.log("Befor:", newArr.join(''));
+        for (let i = 0; i < newArr.length; i++) {
+            if (newArr[i] == newArr[i].toLowerCase()) {
+                newArr[i] = newArr[i].toUpperCase();
+            } else {
+                newArr[i] = newArr[i].toLowerCase();
+            }
+        }
+        console.log("After:", newArr.join(""));
+    </script>
+</body>
+
+</html>

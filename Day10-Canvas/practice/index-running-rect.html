@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="mainFrame"></canvas>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let result = document.getElementById("result");
+        let canvas = document.getElementById("mainFrame");
+        canvas.width = "500";
+        canvas.height = "500";
+        canvas.style = "border: 1px solid black";
+        let ctx = canvas.getContext("2d");
+        let x = 0;
+        let y = 20;
+        let rectWidth = 150;
+        let rectHeight = 75;
+        let distance = 1;
+        let speed = 1;
+        let cnt = 0;
+        function drawRect() {
+            ctx.fillStyle = "black";
+            ctx.fillRect(x, y, rectWidth, rectHeight);
+        }
+        function clearRect() {
+            ctx.clearRect(x, y, rectWidth, rectHeight);
+        }
+        function moveUpDown(){
+            clearRect();
+            let isTouchTop = y <=0;
+            let isTouchBottom = y + rectHeight >= canvas.height;
+            if (isTouchTop || isTouchBottom){
+                distance = -distance
+            }
+            y += distance
+            drawRect();
+        }
+        function init(){
+            drawRect();
+            let gameLoop = setInterval(moveUpDown, speed);
+        }
+        init();
+    </script>
+</body>
+
+</html>

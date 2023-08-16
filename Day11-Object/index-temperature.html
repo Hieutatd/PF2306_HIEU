@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class tempertature {
+            constructor(celsius, fahrenheit, kenvin) {
+                this.celsius = celsius;
+                this.fahrenheit = fahrenheit;
+                this.kenvin = kenvin;
+            }
+            getFahrenheit() { 
+                return this.celsius * 1.8 + 32
+            }
+            getKenvin() {
+                return this.celsius +273.15
+            }
+        }
+        let myTemperature = 25;
+        let tempertature1 = new tempertature(myTemperature);
+        console.log(myTemperature + " độ C = " + tempertature1.getFahrenheit() +" độ F");
+        console.log(myTemperature + " độ C = " + tempertature1.getKenvin() + " độ K");
+    </script>
+</body>
+
+</html> 

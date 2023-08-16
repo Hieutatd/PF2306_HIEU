@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Battery {
+            constructor() {
+                this.energy = 0;
+            }
+            getEnergy() {
+                return this.energy;
+            }
+            setEnergy(amount) {
+                this.energy = amount;
+            }
+            decreaseEnergy() {
+                if (this.energy > 0) {
+                    this.energy = this.energy - 1;
+                }
+            }
+        }
+        class FlashLamp {
+            constructor() {
+                this.sattus = false;
+                this.battery = new Battery();
+            }
+            setBattery(battery) {
+                this.battery = battery;
+            }
+            getBatteryInfo() {
+               return this.battery.getEnergy();
+            }
+            light() {
+                if (this.sattus) {
+                    console.log("Linghting");
+                } else {
+                    console.log("Not light");
+                }
+            }
+            turnOn() {
+                this.sattus = true;
+                this.battery.decreaseEnergy();
+            }
+            turnOff() {
+                this.sattus = false;
+            }
+        }
+        let battery = new Battery();
+        battery.setEnergy(10);
+        document.write(" Set energy: " + battery.getEnergy()+ "<br/>");
+        
+        let flashlamp = new FlashLamp();
+        flashlamp.setBattery(battery);
+        document.write(" Battery Infor: " + flashlamp.getBatteryInfo()+"<br/>")
+        flashlamp.light();
+        flashlamp.turnOn();
+        flashlamp.light();
+        document.write(" Battery Infor: " + flashlamp.getBatteryInfo()+"<br/>")
+        flashlamp.turnOff();
+        flashlamp.light();
+    </script>
+</body>
+
+</html>

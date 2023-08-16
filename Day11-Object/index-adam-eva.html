@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Apple {
+            constructor() {
+                this.weight = 10;
+            }
+            decrease() {
+                this.weight -= 1;
+            }
+            isOver() {
+                return this.weight == 0;
+            }
+            getWeight() {
+                return this.weight
+            }
+        }
+        class Human {
+            constructor(name, gender) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = 65;
+            }
+            getName() {
+                return this.name;
+            }
+            getGender() {
+                return this.gender;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            setName(name){
+                this.name = name;
+            }
+            setWeight(weight){
+                this.weight = weight;
+            }
+            checkApple(apple) {
+                return apple.isOver();
+            }
+            eat(apple) {
+                if (!this.checkApple(apple)) {
+                    this.weight += 1;
+                    apple.decrease()
+                }
+
+            }
+        }
+        let apple = new Apple();
+        let man = new Human("adam", "male");
+        console.log(man.getName());
+        console.log(man.getGender());
+        console.log(man.getWeight());
+        console.log(apple.getWeight());
+        man.eat(apple);
+        console.log(apple.getWeight());
+        console.log(man.getWeight());
+        man.eat(apple);
+        man.eat(apple);
+        console.log(apple.getWeight());
+        man.eat(apple);
+        man.eat(apple);
+        man.eat(apple);
+        man.eat(apple);
+        man.eat(apple);
+        console.log(man.checkApple(apple));
+        man.eat(apple);
+        man.eat(apple);
+        console.log(apple.getWeight());
+        console.log(man.checkApple(apple));
+    </script>
+</body>
+
+</html>

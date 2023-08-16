@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking Textarea</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Type something </h2>
+        <textarea id="my-textarea" cols="30" rows="10"></textarea>
+    </div>
+    <script>
+        let textarea = document.getElementById("my-textarea");
+        let fakedTextarea = "Xin chào, đừng gõ nữa, bạn gõ không được đâu !!!";
+        let char = [...fakedTextarea];
+        let displayText="";
+        let cnt = -1;
+        textarea.addEventListener("keyup", function(){
+            if (displayText.length == fakedTextarea.length) {
+                displayText = "";
+                cnt =-1;
+            }
+            cnt ++;
+            displayText += char [cnt];
+            textarea.value = `${displayText}`
+        })
+    </script>
+</body>
+</html>

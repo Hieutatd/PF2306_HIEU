@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Rat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.status = true;
+            }
+            getSpeed() {
+                return this.speed;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            getSound() {
+                console.log("chít chít");
+            }
+            getStatus() {
+                return this.status;
+            }
+            IsDead() {
+                return !this.status;
+            }
+            die() {
+                this.status = false;
+            }
+        }
+        class Cat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.ratCaught = null;
+            }
+            getSpeed() {
+                return this.speed;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            getSound() {
+                console.log("meo meo");
+            }
+            catch(rat) {
+                if (this.speed > rat.getSpeed() && this.ratCaught == null) {
+                    this.ratCaught = rat;
+                }
+            }
+            eatRat(){
+                let caughtRat = this.ratCaught;
+                if (caughtRat && !caughtRat.IsDead()) {
+                    this.weight += caughtRat.getWeight();
+                    this.ratCaught = null;
+                    caughtRat.die();
+                }
+            }
+        }
+        let mouse1 = new Rat("Jerry1",10,20);
+        let mouse2 = new Rat("Jerry2",15,15);
+        let mouse3 = new Rat("Jerry3",20,5);
+        console.log(mouse3.IsDead());
+        let cat = new Cat("Tom",30,16);
+        cat.catch(mouse3);
+        mouse3.die();
+        console.log(cat.ratCaught);
+        console.log(mouse3.IsDead());// check mouse alive = false or dead = true
+        console.log(cat);
+    </script>
+</body>
+
+</html>

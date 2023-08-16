@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mainFrame" width="400" height="400"></canvas>
+    <script>
+        let canvas = document.getElementById("mainFrame");
+        let ctx = canvas.getContext("2d");
+        let x = 50;
+        let y = 50;
+        class rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+                this.color = "blue";
+            }
+            getArea() {
+                return this.length * this.width
+            }
+            getCircuit() {
+                return (this.length + this.width) * 2
+            }
+            getColor() {
+                return this.color;
+            }
+            setLenght(newLength) {
+                this.length = newLength
+            }
+            setWidth(newWidth) {
+                this.width = newWidth
+            }
+            getNewArea() {
+                return this.length * this.width
+            }
+            getNewCircuit() {
+                return (this.length + this.width) * 2
+            }
+            setColor(newColor) {
+                this.color = newColor;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.fillRect(x, y, this.width, this.length);
+            }
+        }
+        let rectangle1 = new rectangle(30, 40)
+        console.log(rectangle1.getArea());
+        rectangle1.setLenght(200)
+        rectangle1.setWidth(450)
+        console.log(rectangle1.getNewArea());
+        rectangle1.draw();
+
+    </script>
+</body>
+
+</html>

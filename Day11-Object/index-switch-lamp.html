@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class ElectricLamp {
+            constructor() {
+                this.status = false;
+            }
+            getStatus() {
+                return this.status;
+            }
+            turnOff() {
+                this.status = false;
+            }
+            turnOn() {
+                this.status = true;
+            }
+        }
+
+        class SwitchButton {
+            constructor() {
+                this.status = false;
+                this.lamp = null;
+            }
+            switchOn() {
+                this.status = true;
+                if (this.lamp) {
+                    this.lamp.turnOn();
+                }
+            }
+            getStatus() {
+                return this.status;
+            }
+            switchOff() {
+                this.status = false;
+                if (this.lamp) {
+                    this.lamp.turnOff();
+                }
+            }
+            connectToLamp(lamp) {
+                this.lamp = lamp;
+            }
+
+        }
+let electricLamp = new ElectricLamp();
+let button = new SwitchButton()
+//
+button.connectToLamp(electricLamp);
+console.log("status button: " + button.getStatus())
+console.log("status lamp: " + electricLamp.getStatus())
+//
+button.switchOn();
+console.log("status button: " + button.getStatus())
+console.log("status lamp: " + electricLamp.getStatus())
+//
+button.switchOff();
+console.log("status button: " + button.getStatus())
+console.log("status lamp: " + electricLamp.getStatus())
+//
+button.switchOn();
+console.log("status button: " + button.getStatus())
+console.log("status lamp: " + electricLamp.getStatus())
+//
+button.switchOff();
+console.log("status button: " + button.getStatus())
+console.log("status lamp: " + electricLamp.getStatus())
+
+    </script>
+</body>
+
+</html>
